@@ -1,17 +1,25 @@
-﻿
-[System.Serializable]
-public struct InputObject {
-    public float horizontal;
-    public float vertical;
+﻿namespace Polyworks
+{
+    using System.Collections.Generic;
 
-    public bool isEscapeDown;
-    public bool isActuateDown;
-    public bool isLeftDown;
-    public bool isRightDown;
-    public bool isUpDown;
-    public bool isDownDown;
+    [System.Serializable]
+    public struct InputObject {
+        public float horizontal;
+        public float vertical;
+        public float depth;
+        
+        public Dictionary<string, bool> buttons;
 
-    public bool isZoomInDown;
-    public bool isZoomOutDown;
+        public bool isCancelDown;
+        public bool isSubmitDown;
+        public bool isLeftDown;
+        public bool isRightDown;
+        public bool isUpDown;
+        public bool isDownDown;
+
+        public bool isZoomInDown;
+        public bool isZoomOutDown;
 	
+    }
+
 }
