@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 834505141}
   - component: {fileID: 834505143}
   - component: {fileID: 834505144}
+  - component: {fileID: 834505139}
   m_Layer: 8
   m_Name: book-viewer
   m_TagString: MainCamera
@@ -173,6 +174,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &834505139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 834505138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb6bbff7aa286342ac094d10809398c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0.1
+  ySpeed: 0.1
+  zSpeed: 0
+  boundary:
+    minX: 0
+    maxX: 100
+    minY: 0
+    maxY: 100
+    minZ: 0
+    maxZ: 0
 --- !u!20 &834505141
 Camera:
   m_ObjectHideFlags: 0
@@ -234,12 +256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  horizontalSpeed: 2
-  verticalSpeed: 2
-  maxX: 0
-  minX: 0
-  maxY: 0
-  minY: 0
 --- !u!114 &834505144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62f549161108494d8d242776967a912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  book: {fileID: 0}
+  buttonMaps: []
 --- !u!1 &1537761486
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,6 +321,7 @@ GameObject:
   - component: {fileID: 1537761489}
   - component: {fileID: 1537761488}
   - component: {fileID: 1537761487}
+  - component: {fileID: 1537761491}
   m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
@@ -369,13 +388,26 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1537761486}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.12434995, y: 0.36190665, z: 0.29880255, w: 0.87422985}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.066, y: 44.999, z: 37.767002}
+--- !u!114 &1537761491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1537761486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7930725017e19842a8e93e03d0bd136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numPages: 4
+  pageIndex: 0
 --- !u!1 &1663118663
 GameObject:
   m_ObjectHideFlags: 0

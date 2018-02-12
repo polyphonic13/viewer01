@@ -40,6 +40,7 @@ public class TranslateAgent : MonoBehaviour {
 
 	public void Init()
 	{
+		Debug.Log("translate agent init");
 		_deviation = new Vector3();
 	}
 

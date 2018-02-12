@@ -12,10 +12,11 @@ public struct ButtonMap {
 
 public class ViewerTest : MonoBehaviour {
 
+	public Book book;
+
 	public ButtonMap[] buttonMaps;
 
 	private BookViewer viewer;
-	private Book currentBook;
 
 	private InputObject input;
 
@@ -27,6 +28,12 @@ public class ViewerTest : MonoBehaviour {
 		if(viewerObj != null)
 		{
 			viewer = viewerObj.GetComponent<BookViewer>();
+			viewer.Init();
+			
+			if(book != null)
+			{
+				viewer.SetBook(book);
+			}
 		}
 	}
 	
@@ -61,7 +68,7 @@ public class ViewerTest : MonoBehaviour {
 			input.vertical = CrossPlatformInputManager.GetAxis("Vertical");
 			input.buttons = SetButtonsDown();
 			input.isSubmitDown = CrossPlatformInputManager.GetButtonDown("Submit");
-
+//			Debug.Log("input.buttons = " + input.buttons);
 			viewer.SetInput(input);
 		} 
 		else if(CrossPlatformInputManager.GetButtonDown("Submit"))
