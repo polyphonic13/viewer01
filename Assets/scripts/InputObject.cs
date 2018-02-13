@@ -17,9 +17,7 @@
         public bool isUpDown;
         public bool isDownDown;
 
-        public bool isZoomInDown;
-        public bool isZoomOutDown;
-	
+        public bool isZoomDown;	
     }
 
 }

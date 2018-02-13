@@ -27,15 +27,15 @@ public class TranslateAgent : MonoBehaviour {
 
 	public void Move(float horizontal, float vertical, float depth = 0) 
 	{        
-		_moveX = (xSpeed != 0 && horizontal != 0) ? _normalizeInput(horizontal, boundary.minX, boundary.maxX, _deviation.x) : 0;
-		_moveY = (ySpeed != 0 && vertical != 0) ? _normalizeInput(vertical, boundary.minY, boundary.maxY, _deviation.y) : 0; 
-		_moveZ = (zSpeed != 0 && depth != 0) ? _normalizeInput(depth, boundary.minZ, boundary.maxZ, _deviation.z) : 0;
+		_moveX = (xSpeed != 0 && horizontal != 0) ? _normalizeInput(horizontal, boundary.minX, boundary.maxX, _deviation.x) * xSpeed : 0;
+		_moveY = (ySpeed != 0 && vertical != 0) ? _normalizeInput(vertical, boundary.minY, boundary.maxY, _deviation.y) * ySpeed : 0; 
+		_moveZ = (zSpeed != 0 && depth != 0) ? _normalizeInput(depth, boundary.minZ, boundary.maxZ, _deviation.z) * zSpeed : 0;
 		        
 		_deviation.x += _moveX;
 		_deviation.y += _moveY;
 		_deviation.z += _moveZ;
 
-		transform.position = new Vector3(_moveX, _moveY, _moveZ);
+		transform.Translate(new Vector3(_moveX, _moveY, _moveZ));
 	}
 
 	public void Init()

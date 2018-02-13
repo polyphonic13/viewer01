@@ -29,7 +29,7 @@ public class ViewerTest : MonoBehaviour {
 		{
 			viewer = viewerObj.GetComponent<BookViewer>();
 			viewer.Init();
-			
+
 			if(book != null)
 			{
 				viewer.SetBook(book);
@@ -37,44 +37,26 @@ public class ViewerTest : MonoBehaviour {
 		}
 	}
 	
-	private bool GetIsButtonDown(string key)
-	{
-		return CrossPlatformInputManager.GetButtonDown(key);
-	}
-
-	private Dictionary<string, bool> SetButtonsDown() 
-	{
-		downButtons = new Dictionary<string, bool>();
-
-		foreach(ButtonMap map in buttonMaps)
-		{
-			downButtons.Add(map.key, GetIsButtonDown(map.name));
-		}
-		return downButtons;
-	}
-
 	void FixedUpdate () 
 	{
-		if(CrossPlatformInputManager.GetButtonDown("Submit"))
-		{
-			Debug.Log("submit = " + CrossPlatformInputManager.GetButtonDown("Submit"));
-		}
-		
 		if(viewer.isActivated) 
 		{
 			input = new InputObject();
 
 			input.horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
 			input.vertical = CrossPlatformInputManager.GetAxis("Vertical");
-			input.buttons = SetButtonsDown();
+
 			input.isSubmitDown = CrossPlatformInputManager.GetButtonDown("Submit");
-//			Debug.Log("input.buttons = " + input.buttons);
+			input.isCancelDown = CrossPlatformInputManager.GetButtonDown("Cancel");
+			input.isLeftDown = CrossPlatformInputManager.GetButtonDown("Left");
+			input.isRightDown = CrossPlatformInputManager.GetButtonDown("Right");
+			input.isZoomDown = CrossPlatformInputManager.GetButtonDown("Zoom");
+
 			viewer.SetInput(input);
 		} 
 		else if(CrossPlatformInputManager.GetButtonDown("Submit"))
 		{
 			viewer.Activate();
-		}
-		
+		}		
 	}
 }

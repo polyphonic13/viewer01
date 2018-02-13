@@ -16,14 +16,16 @@
 
 		public void SetBook(Book book)
 		{
-			Debug.Log("set book");
+//			Debug.Log("set book");
 			_book = book;
 		}
 
 		public void Init ()
 		{
-			Debug.Log("book viewer init");
+//			Debug.Log("book viewer init");
 			_cameraZoom = gameObject.GetComponent<CameraZoom>();
+			_cameraZoom.Init();
+
 			_translateAgent = gameObject.GetComponent<TranslateAgent>();
 			_translateAgent.Init();
 
@@ -31,7 +33,6 @@
 			_defaultInput.horizontal = 0;
 			_defaultInput.vertical = 0;
 			_defaultInput.depth = 0;
-			_defaultInput.buttons = new Dictionary<string, bool>();
 
 			_input = _defaultInput;
 		}
@@ -43,7 +44,7 @@
 
 		public void Activate()
 		{
-			Debug.Log("activate");
+//			Debug.Log("activate");
 			isActivated = true;
 		}
 
@@ -58,7 +59,7 @@
 			{
 				return;
 			}
-			if(_translateAgent != null)
+			if(_translateAgent == null)
 			{
 				return;
 			}
@@ -67,7 +68,7 @@
 		
 		public void NextPage() 
 		{
-			Debug.Log("next page");
+//			Debug.Log("next page, _book = " + _book);
 			if(_book == null)
 			{
 				return;
@@ -77,7 +78,7 @@
 
 		public void PreviousPage() 
 		{
-			Debug.Log("prev page");
+//			Debug.Log("prev page, _book = " + _book);
 			if(_book == null)
 			{
 				return;
@@ -85,14 +86,10 @@
 			_book.PreviousPage();
 		}
 
-		public void ZoomIn()
+		public void Zoom()
 		{
-			_cameraZoom.ZoomIn();
-		}
-
-		public void ZoomOut()
-		{
-			_cameraZoom.ZoomOut();
+//			Debug.Log("zoom");
+			_cameraZoom.ToggleZoom();
 		}
 
 		private void FixedUpdate()
@@ -101,34 +98,28 @@
 			{
 				return;
 			}
-			if(_input.buttons != null)
-			{
-				if(_input.buttons.ContainsKey("Cancel"))
+
+				if(_input.isCancelDown)
 				{
-					Debug.Log("deactivate");
+//					Debug.Log("deactivate");
 					_input = _defaultInput;
 					Deactivate();
 					return;
 				}
 
-				if(_input.buttons.ContainsKey("Left"))
+				if(_input.isRightDown)
 				{
 					NextPage();
 				} 
-				else if(_input.buttons.ContainsKey("Right"))
+				else if(_input.isLeftDown)
 				{
 					PreviousPage();
 				}
 
-				if(_input.buttons.ContainsKey("ZoomIn"))
+				if(_input.isZoomDown)
 				{
-					ZoomIn();
-				} 
-				else if(_input.buttons.ContainsKey("ZoomOut"))
-				{
-					ZoomOut();
+					Zoom();
 				}
-			}
 
 			Move(_input.horizontal, _input.vertical);
 			

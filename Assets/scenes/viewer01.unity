@@ -185,14 +185,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb6bbff7aa286342ac094d10809398c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpeed: 0.1
-  ySpeed: 0.1
+  xSpeed: 0.01
+  ySpeed: 0.01
   zSpeed: 0
   boundary:
-    minX: 0
-    maxX: 100
-    minY: 0
-    maxY: 100
+    minX: -2
+    maxX: 2
+    minY: -2
+    maxY: 2
     minZ: 0
     maxZ: 0
 --- !u!20 &834505141
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28a323a8c51d27d4182f69a56c7249b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomFOV: 10
+  zoomFOV: 25
 --- !u!1 &1247533466
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 1247533467}
   - component: {fileID: 1247533468}
   m_Layer: 0
-  m_Name: main
+  m_Name: viewer-test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,8 +308,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62f549161108494d8d242776967a912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  book: {fileID: 0}
-  buttonMaps: []
+  book: {fileID: 1537761491}
+  buttonMaps:
+  - key: ZoomIn
+    name: ZoomIn
+  - key: ZoomOut
+    name: ZoomOut
 --- !u!1 &1537761486
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +327,7 @@ GameObject:
   - component: {fileID: 1537761487}
   - component: {fileID: 1537761491}
   m_Layer: 8
-  m_Name: Cube
+  m_Name: book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -408,6 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numPages: 4
   pageIndex: 0
+  isLoopPages: 0
 --- !u!1 &1663118663
 GameObject:
   m_ObjectHideFlags: 0
