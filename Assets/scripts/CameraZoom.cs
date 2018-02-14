@@ -5,7 +5,8 @@
 	using UnityEngine;
 
 	public class CameraZoom : MonoBehaviour {
-		public float zoomFOV = 10;
+		public float maxZoom = 20f;
+		public float zoomIncrement = 1f;
 
 		private Camera _camera;
 		private float _normalFOV;
@@ -24,7 +25,7 @@
 			{
 				return;
 			}
-			_camera.fieldOfView = (_camera.fieldOfView == zoomFOV) ? _normalFOV : zoomFOV;
+			_camera.fieldOfView = (_camera.fieldOfView == _normalFOV) ? maxZoom : _normalFOV;
 		}
 
 		public void ZoomIn()
@@ -34,7 +35,10 @@
 			{
 				return;
 			}
-			_camera.fieldOfView = zoomFOV;
+			if(_camera.fieldOfView > maxZoom)
+			{
+				_camera.fieldOfView -= zoomIncrement;
+			}
 		}
 
 		public void ZoomOut()
@@ -44,6 +48,14 @@
 			{
 				return;
 			}
+			if(_camera.fieldOfView < _normalFOV)
+			{
+				_camera.fieldOfView += zoomIncrement;
+			}
+		}
+
+		public void Reset()
+		{
 			_camera.fieldOfView = _normalFOV;
 		}
 	}

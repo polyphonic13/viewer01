@@ -50,7 +50,8 @@ public class ViewerTest : MonoBehaviour {
 			input.isCancelDown = CrossPlatformInputManager.GetButtonDown("Cancel");
 			input.isLeftDown = CrossPlatformInputManager.GetButtonDown("Left");
 			input.isRightDown = CrossPlatformInputManager.GetButtonDown("Right");
-			input.isZoomDown = CrossPlatformInputManager.GetButtonDown("Zoom");
+			input.isZoomInDown = CrossPlatformInputManager.GetButtonDown("ZoomIn");
+			input.isZoomOutDown = CrossPlatformInputManager.GetButtonDown("ZoomOut");
 
 			viewer.SetInput(input);
 		} 

@@ -50,6 +50,7 @@
 
 		public void Deactivate()
 		{
+			_cameraZoom.Reset();
 			isActivated = false;
 		}
 
@@ -92,6 +93,16 @@
 			_cameraZoom.ToggleZoom();
 		}
 
+		public void ZoomIn()
+		{
+			_cameraZoom.ZoomIn();
+		}
+
+		public void ZoomOut()
+		{
+			_cameraZoom.ZoomOut();
+		}
+
 		private void FixedUpdate()
 		{
 			if(!isActivated)
@@ -116,9 +127,14 @@
 					PreviousPage();
 				}
 
-				if(_input.isZoomDown)
+				if(_input.isZoomInDown)
 				{
-					Zoom();
+					ZoomIn();
+				}
+
+				if(_input.isZoomOutDown)
+				{
+					ZoomOut();
 				}
 
 			Move(_input.horizontal, _input.vertical);
