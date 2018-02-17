@@ -155,6 +155,66 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d8c6f63d1b510045a0cab8db8756106, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &123088794
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400004, guid: ab5191dba1b23434bb09b0f8206d3f9b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: ab5191dba1b23434bb09b0f8206d3f9b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: ab5191dba1b23434bb09b0f8206d3f9b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: ab5191dba1b23434bb09b0f8206d3f9b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: ab5191dba1b23434bb09b0f8206d3f9b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: ab5191dba1b23434bb09b0f8206d3f9b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: ab5191dba1b23434bb09b0f8206d3f9b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: ab5191dba1b23434bb09b0f8206d3f9b, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ab5191dba1b23434bb09b0f8206d3f9b, type: 3}
+  m_IsPrefabParent: 0
+--- !u!1 &123088795 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100004, guid: ab5191dba1b23434bb09b0f8206d3f9b, type: 3}
+  m_PrefabInternal: {fileID: 123088794}
+--- !u!114 &123088796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 123088795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7930725017e19842a8e93e03d0bd136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numPages: 0
+  pageIndex: 0
+  isLoopPages: 0
 --- !u!1 &834505138
 GameObject:
   m_ObjectHideFlags: 0
