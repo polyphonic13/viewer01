@@ -13,15 +13,15 @@
 
 		public void Init()
 		{
-			Debug.Log("camera zoom init");
+			// Debug.Log("camera zoom init");
 			_camera = gameObject.GetComponent<Camera>();
 			_normalFOV = _camera.fieldOfView;
-			Debug.Log(" _camera = " + _camera);
+			// Debug.Log(" _camera = " + _camera);
 		}		
 
 		public void ToggleZoom()
 		{
-			Debug.Log("toggle zoom, fov = " + _camera.fieldOfView);
+			// Debug.Log("toggle zoom, fov = " + _camera.fieldOfView);
 			if(_camera == null)
 			{
 				return;
@@ -31,7 +31,7 @@
 
 		public void ZoomIn()
 		{
-			Debug.Log("zoom in");
+			// Debug.Log("zoom in");
 			if(_camera == null)
 			{
 				return;
@@ -44,7 +44,7 @@
 
 		public void ZoomOut()
 		{
-			Debug.Log("zoom out");
+			// Debug.Log("zoom out");
 			if(_camera == null)
 			{
 				return;

@@ -6,7 +6,7 @@
 
 	public class Book : MonoBehaviour {
 		public GameObject[] pages;
-		public int numPages = 0;
+
 		public int pageIndex = 0;
 		public bool isLoopPages = false;
 
@@ -14,7 +14,7 @@
 		{
 		
 		}
-	
+
 		public void NextPage() 
 		{
 			int offIndex = pageIndex;
@@ -29,7 +29,7 @@
 				pageIndex = 0;
 				_updateActivePages(offIndex, pageIndex);
 			}
-			Debug.Log("page index now: " + pageIndex);
+			// Debug.Log("page index now: " + pageIndex);
 		}
 
 		public void PreviousPage() 
@@ -43,10 +43,10 @@
 			}
 			else if(isLoopPages)
 			{
-				pageIndex = numPages - 1;
+				pageIndex = pages.Length - 1;
 				_updateActivePages(offIndex, pageIndex);
 			}
-			Debug.Log("page indez now: " + pageIndex);
+			// Debug.Log("page indez now: " + pageIndex);
 		}
 
 		private void _updateActivePages(int offIndex, int onIndex)
