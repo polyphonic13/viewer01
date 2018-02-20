@@ -14,6 +14,11 @@ ModelImporter:
     100012: DEF-page03
     100014: page_002
     100016: page_003
+    100018: book01-armature
+    100020: page_000
+    100022: page_001
+    100024: page_004
+    100026: pages
     400000: 1
     400002: Armature
     400004: //RootNode
@@ -23,6 +28,11 @@ ModelImporter:
     400012: DEF-page03
     400014: page_002
     400016: page_003
+    400018: book01-armature
+    400020: page_000
+    400022: page_001
+    400024: page_004
+    400026: pages
     2100000: page01
     2100002: text01__william-journal-000a_jpg
     2100004: text02
@@ -32,20 +42,32 @@ ModelImporter:
     2300004: Cube_001
     2300006: page_002
     2300008: page_003
+    2300010: page_000
+    2300012: page_001
+    2300014: page_004
     3300000: 1
     3300002: cover
     3300004: Cube_001
     3300006: page_002
     3300008: page_003
+    3300010: page_000
+    3300012: page_001
+    3300014: page_004
     4300000: 1
     4300002: page_002
     4300004: Cube_001
     4300006: page_003
     4300008: cover
+    4300010: page_000
+    4300012: page_001
+    4300014: page_004
     7400000: Default Take
     7400002: book01-default
+    7400004: book01-page-turn0
     9500000: //RootNode
     11100000: //RootNode
+    13700000: page_002
+    13700002: page_003
   externalObjects: {}
   materials:
     importMaterials: 1

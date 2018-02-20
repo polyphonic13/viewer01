@@ -16,6 +16,7 @@
 			Debug.Log("camera zoom init");
 			_camera = gameObject.GetComponent<Camera>();
 			_normalFOV = _camera.fieldOfView;
+			Debug.Log(" _camera = " + _camera);
 		}		
 
 		public void ToggleZoom()
